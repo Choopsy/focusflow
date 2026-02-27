@@ -1,0 +1,24 @@
+# Env — NE JAMAIS committer
+.env
+.env.local
+
+# Deps
+node_modules/
+frontend/node_modules/
+
+# Build
+dist/
+.vite/
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+./focusflow-frontend/.env

@@ -1,0 +1,15 @@
+services:
+  frontend:
+    build:
+      context: ./focusflow-frontend
+      dockerfile: Dockerfile
+      target: dev          # utilise l'étape dev du Dockerfile
+    container_name: focusflow-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./focusflow-frontend:/app        # monte ton code local dans le container
+      - /app/node_modules                # garde les node_modules du container
+    env_file:
+      - ./focusflow-frontend/.env        # charge tes variables Supabase
+    restart: unless-stopped
