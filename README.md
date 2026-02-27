@@ -61,58 +61,15 @@ npm run dev
 
 ## 🏗️ Structure du projet
 
-```
-focusflow/
-├── docker-compose.yml        # Orchestration Docker
-├── .env.example              # Template variables d'env
-├── .gitignore
-├── supabase-schema.sql       # Schéma BDD complet à importer
-│
-└── frontend/                 # App Vue 3
-    ├── Dockerfile            # Dev + build prod + nginx
-    ├── nginx.conf            # Config nginx pour la prod
-    ├── vite.config.js        # Vite + PWA
-    ├── package.json
-    └── src/
-        ├── lib/supabase.js   # Client Supabase
-        ├── stores/
-        │   ├── auth.js       # User + session Supabase
-        │   └── session.js    # Timer + tâches + sauvegarde
-        ├── composables/
-        │   └── useTimer.js   # Logique timer (VueUse)
-        ├── router/index.js   # Routes + guards auth
-        ├── views/            # Pages (à créer)
-        └── App.vue
-```
 
 ---
 
 ## 📦 Build de production
 
-```bash
-# Build l'image prod avec nginx intégré
-docker build --target prod -t focusflow:prod ./frontend
-
-# Test local du build prod
-docker run -p 8080:80 focusflow:prod
-# → http://localhost:8080
-```
-
 ---
 
 ## 🌐 Déploiement (Vercel)
 
-```bash
-# Connecte ton repo GitHub à Vercel
-# Settings du projet Vercel :
-#   Root Directory   → frontend
-#   Build Command    → npm run build
-#   Output Directory → dist
-#
-# Ajoute les variables d'env dans Vercel Dashboard
-```
-
----
 
 ## 🗃️ Stack
 
